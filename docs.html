@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizer Documentation</title>
+    <link rel="stylesheet" href="docs.css">
+</head>
+
+<body>
+    <header>
+        <h1>🔄 Visualizer Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="#bubble-sort">Bubble</a>
+        <a href="#selection-sort">Selection</a>
+        <a href="#insertion-sort">Insertion</a>
+        <a href="#quick-sort">Quick</a>
+        <a href="#merge-sort">Merge</a>
+        <a href="#radix-sort">Radix</a>
+        <a href="#counting-sort">Counting</a>
+        <a href="#bucket-sort">Bucket</a>
+    </nav>
+
+    <main id="bubble-sort">
+        <section>
+            <h2>📘 What is Bubble Sort?</h2>
+            <p>Bubble Sort is a basic comparison-based algorithm that repeatedly compares and swaps adjacent elements if
+                they are in the wrong order. After each full pass, the largest unsorted element settles at its correct
+                position at the end of the array—like bubbles rising to the top.</p>
+        </section>
+        <section>
+            <h2>🔄 How It Works Step by Step</h2>
+            <p>Let’s say you have this array: <strong>[6, 3, 8, 5]</strong></p>
+
+            <div class="example">
+                <p><strong>Pass 1:</strong></p>
+                <ul>
+                    <li>Compare 6 and 3 → Swap → [3, 6, 8, 5]</li>
+                    <li>Compare 6 and 8 → No Swap</li>
+                    <li>Compare 8 and 5 → Swap → [3, 6, 5, 8]</li>
+                    <p>→ 8 is in its correct place (sorted).</p>
+                </ul>
+
+                <p><strong>Pass 2:</strong></p>
+                <ul>
+                    <li>Compare 3 and 6 → No Swap</li>
+                    <li>Compare 6 and 5 → Swap → [3, 5, 6, 8]</li>
+                    <p>→ 6 is now correctly placed.</p>
+                </ul>
+
+                <p><strong>Pass 3:</strong></p>
+                <ul>
+                    <li>Compare 3 and 5 → No Swap</li>
+                    <p>→ Everything is sorted!</p>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(n²)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(n²)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(n²)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(1)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>✅ Yes</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: blue;"></span>Comparing</div>
+                <div><span class="color-box" style="background: red;"></span>Swapping</div>
+                <div><span class="color-box" style="background: green;"></span>Sorted</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+    <main id="selection-sort">
+        <section>
+            <h2>📘 What is Selection Sort?</h2>
+            <p>Selection Sort is a simple comparison-based sorting algorithm. It works by repeatedly selecting the
+                smallest (or largest) element from the unsorted portion and placing it at the correct position in the
+                sorted portion. It’s like selecting the smallest card from a hand and placing it at the start, one card
+                at a time.</p>
+        </section>
+
+        <section>
+            <h2>🔄 How It Works Step by Step</h2>
+            <p>Let’s say you have this array: <strong>[7, 2, 5, 1]</strong></p>
+
+            <div class="example">
+                <p><strong>Pass 1:</strong></p>
+                <ul>
+                    <li>Find the smallest in [7, 2, 5, 1] → 1</li>
+                    <li>Swap 1 with 7 → [1, 2, 5, 7]</li>
+                    <p>→ 1 is in its correct position.</p>
+                </ul>
+
+                <p><strong>Pass 2:</strong></p>
+                <ul>
+                    <li>Find the smallest in [2, 5, 7] → 2</li>
+                    <li>No swap needed → [1, 2, 5, 7]</li>
+                    <p>→ 2 is now fixed.</p>
+                </ul>
+
+                <p><strong>Pass 3:</strong></p>
+                <ul>
+                    <li>Find the smallest in [5, 7] → 5</li>
+                    <li>No swap needed → [1, 2, 5, 7]</li>
+                    <p>→ Now everything is sorted!</p>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(n²)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(n²)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(n²)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(1)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>✅ Yes</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: yellow;"></span>Current Index</div>
+                <div><span class="color-box" style="background: blue;"></span>Comparing</div>
+                <div><span class="color-box" style="background: orange;"></span>New Minimum Found</div>
+                <div><span class="color-box" style="background: red;"></span>Swapping</div>
+                <div><span class="color-box" style="background: green;"></span>Sorted</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+    <main id="insertion-sort">
+        <section>
+            <h2>📘 What is Insertion Sort?</h2>
+            <p>Insertion Sort is a simple, intuitive sorting algorithm that builds the sorted array one item at a time.
+                It works the same way you might sort playing cards in your hands: by inserting each new card into its
+                correct position relative to the already sorted ones.</p>
+        </section>
+
+        <section>
+            <h2>🔄 How It Works Step by Step</h2>
+            <p>Let’s say you have this array: <strong>[4, 3, 6, 1]</strong></p>
+
+            <div class="example">
+                <p><strong>Pass 1:</strong></p>
+                <ul>
+                    <li>Start from 2nd element → Compare 4 and 3 → Swap → [3, 4, 6, 1]</li>
+                    <p>→ First two elements are sorted.</p>
+                </ul>
+
+                <p><strong>Pass 2:</strong></p>
+                <ul>
+                    <li>Compare 6 with 4 → No swap → [3, 4, 6, 1]</li>
+                    <p>→ First three elements are sorted.</p>
+                </ul>
+
+                <p><strong>Pass 3:</strong></p>
+                <ul>
+                    <li>Compare 1 with 6 → Swap → [3, 4, 1, 6]</li>
+                    <li>Compare 1 with 4 → Swap → [3, 1, 4, 6]</li>
+                    <li>Compare 1 with 3 → Swap → [1, 3, 4, 6]</li>
+                    <p>→ Whole array is now sorted!</p>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(n)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(n²)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(n²)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(1)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>✅ Yes</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: yellow;"></span>Current Element</div>
+                <div><span class="color-box" style="background: blue;"></span>Comparing</div>
+                <div><span class="color-box" style="background: red;"></span>Swapping</div>
+                <div><span class="color-box" style="background: green;"></span>Sorted</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+    <main id="quick-sort">
+        <section>
+            <h2>📘 What is Quick Sort?</h2>
+            <p>Quick Sort is an efficient, comparison-based sorting algorithm that follows the
+                <strong>divide-and-conquer</strong> approach. It works by selecting a <strong>pivot</strong> element and
+                then partitioning the array such that:
+            </p>
+            <ul>
+                <li>All elements smaller than the pivot are moved to its left</li>
+                <li>All elements greater than the pivot are moved to its right</li>
+            </ul>
+            <p>This process is then applied recursively to the left and right subarrays until the entire array is
+                sorted.</p>
+        </section>
+
+        <section>
+            <h2>🔄 How It Works Step by Step (Partition Intuition)</h2>
+            <p>Consider the array: <strong>[8, 3, 6, 1, 5]</strong></p>
+
+            <div class="example">
+                <p><strong>Step 1: Choose Pivot</strong></p>
+                <ul>
+                    <li>Select the first element as pivot: <strong>8</strong></li>
+                    <li>Rearrange the array so elements &lt; 8 are on the left, &gt; 8 on the right</li>
+                    <li>→ After partition: [3, 6, 1, 5, <strong>8</strong>]</li>
+                    <li>Now 8 is placed at its correct position</li>
+                </ul>
+
+                <p><strong>Step 2: Apply Quick Sort on Left Partition</strong></p>
+                <ul>
+                    <li>Now sort [3, 6, 1, 5]</li>
+                    <li>Choose 3 as pivot → Partition → [1, <strong>3</strong>, 6, 5]</li>
+                    <li>3 is placed correctly</li>
+                </ul>
+
+                <p><strong>Step 3: Continue Recursively</strong></p>
+                <ul>
+                    <li>Sort [1] (already sorted), then sort [6, 5]</li>
+                    <li>Choose 6 as pivot → [5, <strong>6</strong>]</li>
+                    <li>Final array: [1, 3, 5, 6, 8]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(n log n)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(n log n)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(n²)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(log n)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>❌ No</td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>✅ Yes</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: yellow;"></span>Pivot</div>
+                <div><span class="color-box" style="background: blue;"></span>Comparing</div>
+                <div><span class="color-box" style="background: red;"></span>Swapping</div>
+                <div><span class="color-box" style="background: green;"></span>Sorted</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+    <main id="merge-sort">
+        <section>
+            <h2>📘 What is Merge Sort?</h2>
+            <p>Merge Sort is a stable, divide-and-conquer sorting algorithm. It works by dividing the array into smaller
+                subarrays, sorting them recursively, and then merging the sorted subarrays back together to form the
+                final sorted array.</p>
+            <p>Merge Sort does not sort the array in place during the divide step—it creates new arrays during the merge
+                phase. The key operation is merging two already sorted subarrays into a single sorted array.</p>
+        </section>
+
+        <section>
+            <h2>🔄 How It Works Step by Step (Divide and Merge Intuition)</h2>
+            <p>Consider the array: <strong>[5, 2, 8, 1]</strong></p>
+
+            <div class="example">
+                <p><strong>Step 1: Divide</strong></p>
+                <ul>
+                    <li>Split array into halves → [5, 2] and [8, 1]</li>
+                    <li>Split again → [5], [2], [8], [1]</li>
+                    <li>Each element is now a single-element array (base case)</li>
+                </ul>
+
+                <p><strong>Step 2: Merge Sorted Parts</strong></p>
+                <ul>
+                    <li>Merge [5] and [2] → [2, 5]</li>
+                    <li>Merge [8] and [1] → [1, 8]</li>
+                </ul>
+
+                <p><strong>Step 3: Final Merge</strong></p>
+                <ul>
+                    <li>Merge [2, 5] and [1, 8] → [1, 2, 5, 8]</li>
+                    <li>✅ Final sorted array</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(n log n)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(n log n)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(n log n)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(n)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>❌ No</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: yellow;"></span>Current Merge Range</div>
+                <div><span class="color-box" style="background: blue;"></span>Comparing</div>
+                <div><span class="color-box" style="background: green;"></span>Sorted</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+    <main id="radix-sort">
+        <section>
+            <h2>📘 What is Radix Sort?</h2>
+            <p>Radix Sort is a non-comparison-based sorting algorithm that sorts numbers by processing their digits one
+                place at a time—from the least significant digit (LSD) to the most significant digit (MSD). It is
+                commonly used when sorting integers with a known digit range.</p>
+            <p>It uses a stable sorting method (like Counting Sort) at each digit level to maintain the relative order
+                of elements. This process continues until all digits are processed, resulting in a fully sorted array.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔄 How It Works Step by Step (Digit-by-Digit Intuition)</h2>
+            <p>Consider the array: <strong>[170, 45, 75, 90]</strong></p>
+
+            <div class="example">
+                <p><strong>Step 1: Process 1's Digit (exp = 1)</strong></p>
+                <ul>
+                    <li>Compare last digits: [0, 5, 5, 0]</li>
+                    <li>Sort based on last digit → [170, 90, 45, 75]</li>
+                </ul>
+
+                <p><strong>Step 2: Process 10's Digit (exp = 10)</strong></p>
+                <ul>
+                    <li>Digits: [7, 9, 4, 7]</li>
+                    <li>Sort based on 10's digit → [45, 170, 75, 90]</li>
+                </ul>
+
+                <p><strong>Step 3: Process 100's Digit (exp = 100)</strong></p>
+                <ul>
+                    <li>Digits: [0, 1, 0, 0]</li>
+                    <li>Sort based on 100's digit → [45, 75, 90, 170]</li>
+                </ul>
+
+                <p>✅ Final sorted array: <strong>[45, 75, 90, 170]</strong></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(nk)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(nk)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(nk)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(n + k)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>✅ Yes</td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>❌ No</td>
+                </tr>
+            </table>
+            <p><small>*Here, <strong>n</strong> = number of elements, and <strong>k</strong> = number of digits in the
+                    maximum number.</small></p>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: blue;"></span>Comparing Digits</div>
+                <div><span class="color-box" style="background: green;"></span>Updated Position</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+    <main id="counting-sort">
+        <section>
+            <h2>📘 What is Counting Sort?</h2>
+            <p>Counting Sort is a non-comparison-based sorting algorithm that works by counting the number of
+                occurrences (frequency) of each unique element. It then reconstructs the sorted array based on these
+                frequencies.</p>
+            <p>It is most efficient when sorting integers over a small, known range. Counting Sort is not
+                comparison-based, making it faster than comparison sorts like Quick Sort or Merge Sort in specific
+                scenarios.</p>
+        </section>
+
+        <section>
+            <h2>🔄 How It Works Step by Step (Frequency-Based Intuition)</h2>
+            <p>Consider the array: <strong>[4, 2, 2, 8, 3]</strong></p>
+
+            <div class="example">
+                <p><strong>Step 1: Count Frequencies</strong></p>
+                <ul>
+                    <li>Create a count array of size (max - min + 1)</li>
+                    <li>Count occurrences → [0, 0, 2, 1, 1, 0, 0, 0, 1]</li> <!-- indices: 0 to 8 -->
+                </ul>
+
+                <p><strong>Step 2: Rebuild Sorted Array</strong></p>
+                <ul>
+                    <li>Using the count array, place elements in order: [2, 2, 3, 4, 8]</li>
+                    <li>Each value is placed based on how many times it appeared</li>
+                </ul>
+
+                <p>✅ Final sorted array: <strong>[2, 2, 3, 4, 8]</strong></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(n + k)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(n + k)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(n + k)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(k)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>❌ No<sup>*</sup></td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>❌ No</td>
+                </tr>
+            </table>
+            <p><small><sup>*</sup> This version of Counting Sort does not preserve stability because it reconstructs
+                    directly into the input array without prefix sum.</small></p>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: blue;"></span>Counting Frequencies</div>
+                <div><span class="color-box" style="background: green;"></span>Placed in Sorted Array</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+    <main id="bucket-sort">
+        <section>
+            <h2>📘 What is Bucket Sort?</h2>
+            <p>Bucket Sort is a non-comparison-based sorting algorithm that distributes elements into several groups
+                called “buckets.” Each bucket contains a range of values. The elements inside each bucket are then
+                sorted individually using another algorithm like Insertion Sort. Finally, all the buckets are
+                concatenated to form the final sorted array.</p>
+            <p>It is most effective when the input is uniformly distributed over a range, such as floating-point numbers
+                or integers with a known spread.</p>
+        </section>
+
+        <section>
+            <h2>🔄 How It Works Step by Step (Distribution + Local Sorting)</h2>
+            <p>Consider the array: <strong>[0.78, 0.17, 0.39, 0.26, 0.72, 0.94]</strong></p>
+
+            <div class="example">
+                <p><strong>Step 1: Create Buckets</strong></p>
+                <ul>
+                    <li>Divide the range of input into equal-sized buckets (e.g., 6 buckets)</li>
+                    <li>Distribute elements into appropriate buckets based on their value</li>
+                    <li>Example bucket groups: [0.17], [0.26], [0.39], [], [0.72, 0.78], [0.94]</li>
+                </ul>
+
+                <p><strong>Step 2: Sort Each Bucket</strong></p>
+                <ul>
+                    <li>Sort individual buckets using Insertion Sort</li>
+                    <li>Each bucket becomes internally sorted</li>
+                </ul>
+
+                <p><strong>Step 3: Concatenate All Buckets</strong></p>
+                <ul>
+                    <li>Join all sorted buckets: [0.17, 0.26, 0.39, 0.72, 0.78, 0.94]</li>
+                    <li>✅ Final sorted array</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Time & Space Complexity</h2>
+            <table>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+                <tr>
+                    <td>Best</td>
+                    <td>O(n + k)</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>O(n + k)</td>
+                </tr>
+                <tr>
+                    <td>Worst</td>
+                    <td>O(n²)</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Space Complexity</td>
+                    <td>O(n + k)</td>
+                </tr>
+                <tr>
+                    <td>Stable</td>
+                    <td>✅ Yes<sup>*</sup></td>
+                </tr>
+                <tr>
+                    <td>In-Place</td>
+                    <td>❌ No</td>
+                </tr>
+            </table>
+            <p><small><sup>*</sup> Stability depends on the sorting algorithm used inside the buckets. Here, we used
+                    Insertion Sort, which is stable.</small></p>
+        </section>
+
+        <section>
+            <h2>🎨 Color Legend (During Execution)</h2>
+            <div class="legend">
+                <div><span class="color-box" style="background: yellow;"></span>Distributing to Bucket</div>
+                <div><span class="color-box" style="background: blue;"></span>Inside Bucket</div>
+                <div><span class="color-box" style="background: red;"></span>Swapping in Bucket</div>
+                <div><span class="color-box" style="background: green;"></span>Sorted</div>
+                <div><span class="color-box" style="background: pink;"></span>Default</div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
