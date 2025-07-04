@@ -1,0 +1,58 @@
+/* App.css */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    /* Ensures the container takes at least full height */
+}
+
+.graph-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 80vh;
+}
+
+footer {
+    margin-top: auto;
+    /* Pushes the footer to the bottom */
+}
+
+
+
+/* for header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 24px;
+    font-size: 14px;
+    color: #222;
+    text-align: left;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.85),
+            rgba(255, 255, 255, 0.75));
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08), inset 0 0 10px rgba(255, 255, 255, 0.6);
+    z-index: 1000;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,31 @@
+.array-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    /* height: 480px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+
+.array-bar {
+    width: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 1px;
+    position: relative;
+    font-size: 6px;
+    color: black;
+    margin-bottom: -40px;
+    font-weight: bold;
+}
+
+.bar-value {
+    position: absolute;
+    bottom: -9px;
+    /* Position at the top inside the bar */
+    text-align: center;
+    width: 100%;
+}
